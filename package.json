@@ -9,7 +9,8 @@
     "format": "prettier --write \"./**/*.{ts,tsx}\"",
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "type-check": "tsc --noEmit",
-    "validate": "yarn run type-check && yarn run lint"
+    "validate": "yarn run type-check && yarn run lint",
+    "postinstall": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks"
   },
   "dependencies": {
     "@zeit/next-source-maps": "0.0.4-canary.1",
@@ -26,6 +27,7 @@
     "eslint": "^7.28.0",
     "eslint-config-next": "^11.0.0",
     "eslint-config-prettier": "^8.3.0",
+    "husky": "^6.0.0",
     "prettier": "^2.2.1",
     "typescript": "^4.3.4"
   }
