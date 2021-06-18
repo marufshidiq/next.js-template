@@ -10,7 +10,9 @@
     "format": "prettier --write \"./**/*.{ts,tsx}\"",
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "type-check": "tsc --noEmit",
-    "validate": "yarn run type-check && yarn run lint"
+    "validate": "yarn run type-check && yarn run lint",
+    "storybook": "start-storybook -p 3200",
+    "storybook:build": "build-storybook"
   },
   "dependencies": {
     "@zeit/next-source-maps": "0.0.4-canary.1",
@@ -19,6 +21,10 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/react": "^6.2.9",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
@@ -29,6 +35,7 @@
     "eslint-config-prettier": "^8.3.0",
     "husky": "^6.0.0",
     "prettier": "^2.2.1",
+    "react-docgen-typescript": "^2.0.0",
     "typescript": "^4.3.4"
   }
 }
