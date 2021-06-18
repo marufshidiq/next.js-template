@@ -3,18 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3100 -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "format": "prettier --write \"./**/*.{ts,tsx}\"",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "type-check": "tsc --noEmit",
+    "validate": "yarn run type-check && yarn run lint"
   },
   "dependencies": {
+    "@zeit/next-source-maps": "0.0.4-canary.1",
     "next": "11.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "eslint": "7.28.0",
-    "eslint-config-next": "11.0.0"
+    "@types/node": "^14.14.31",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.28.0",
+    "eslint-config-next": "^11.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.3.4"
   }
 }
